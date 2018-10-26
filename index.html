@@ -1,1 +1,28 @@
-<p>Hello World!</p>
+<div id='1'></div>
+<script>
+    var url = new URL(window.location)
+
+    console.log(window.location + '\n' + url.searchParams.get("t"))
+    var t = url.searchParams.get("t")
+
+    var t = t.split('')
+
+    var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    alphabet = alphabet.split('')
+
+    console.log(alphabet)
+    
+    for(i = 0; i < t.length; i++) {
+        alphabet.forEach(letter => {
+            if(t[i].toLowerCase() == letter) {
+                t[i] = t[i] + 'omp'
+            }
+        })
+    }
+
+    var ompp = document.createElement("p")
+    var ompn = document.createTextNode(t.join(' '))
+    ompp.appendChild(ompn)
+
+    document.getElementById('1').appendChild(ompp)
+</script>
